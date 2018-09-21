@@ -1,0 +1,21 @@
+---
+name: cmpsc-100-fall-2018-practical2
+break: true
+indent: 4
+---
+# --> check the source code for various characteristics
+# note that without an "--exact" the check is an "at least"
+src/main:
+    java:
+        practicaltwo/ComputeMoonDistance.java:
+            --single 6 --language Java
+            --multi 2 --language Java
+            --fragment "println(" --count 4 --exact
+            --fragment "new Date(" --count 1 --exact
+# --> check the number of commits beyond a threshold
+--commits 5
+# --> check that the program executes and produces 4 lines of output
+# --> check that the output contains a fragment
+--command "gradle -q --console plain run" --executes
+--command "gradle -q --console plain run" --count 4 --exact
+--command "gradle -q --console plain run" --fragment "420384800" --count 1 --exact
