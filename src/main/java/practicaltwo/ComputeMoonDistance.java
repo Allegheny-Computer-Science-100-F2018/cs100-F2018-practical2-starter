@@ -2,6 +2,8 @@ package practicaltwo
 
 import java.util.date;
 
+// TODO: Fix all of the defects in this program
+
 public class ComputeMoonDistance {
 
   public static void main(String[] args) {
